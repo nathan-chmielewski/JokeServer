@@ -1,0 +1,421 @@
+******JokeClient 8 responses in joke mode, 8 responses in proverb mode:
+// JOKECLIENT LAUNCHED
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient
+// CONNECTED TO ONE SERVER, LOCALHOST
+Server one: localhost/127.0.0.1, port 4545
+// ENTER USER NAME
+Enter your name: nathan
+// PRESS ENTER 8 TIMES IN JOKE MODE
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+// ORDER OF FIRST 4 JOKES - B C D A, jokes returned randomly
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+// ORDER OF NEXT FOUR JOKES - C B D A, jokes returned randomly
+
+PD nathan: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB nathan: The best way out is always through.
+// ORDER OF FIRST FOUR PROVERBS - D C A B
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD nathan: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB nathan: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+// ORDER OF NEXT FOUR PROVERBS - A D C B, confirms random order of four proverbs
+
+
+******Log using admin client to interleave Joke Mode and Proverb Mode
+JOKE CLIENT:
+// LAUNCHED JOKE CLIENT USING DEFAULT LOCALHOST
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient
+Server one: localhost/127.0.0.1, port 4545
+// ENTERED NAME
+Enter your name: nathan
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+// ASK FOR SOMETHING, THEN ADMIN SWITCHES MODE
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD nathan: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+// ASK FOR SOMETHING THREE TIMES, THEN ADMIN SWITCHES MODE, NO REPEATED ITEMS
+JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end:
+// ASK FOR SOMETHING TWO TIMES, NOW HAVE SEEN 3 JOKES AND 3 PROVERBS 
+PB nathan: The best way out is always through.
+// COMPLETED PROVERB CYCLE - D C A B
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+// COMPLETED JOKE CYCLE - D B C A
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+// RECEIVED THREE JOKES
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD nathan: Fortune favors the brave.
+// RECEIVED TWO PROVERBS
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB nathan: Why did the picture go to jail? Because it was framed.
+// COMPLETED JOKE CYCLE, DIFFERENT ORDER - A C D B
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB nathan: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+// COMPLETED PROVERB CYCLE, DIFFERENT ORDER - C D B A
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
+JOKESERVER
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer
+Server one: localhost, port 4545
+Mode toggled to PROVERB.
+Mode toggled to JOKE.
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+Mode toggled to JOKE.
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+Mode toggled to JOKE.
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+
+JOKECLIENTADMIN
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClientAdmin
+Server one: localhost/127.0.0.1, port 5050
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+
+
+******Multiple JokeClients
+// ONE JOKE CLIENT
+// This client completes a joke cycle - C B D A, and a proverb cycle - B A C D
+// in a different order than the second client. Requests from each client are
+// interleaved during execution
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient
+Server one: localhost/127.0.0.1, port 4545
+Enter your name: joseph
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC joseph: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+No secondary server being used.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB joseph: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD joseph: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB joseph: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA joseph: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA joseph: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC joseph: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD joseph: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+
+// SECOND JOKE CLIENT
+// This client completes a joke cycle - A D B C, and a proverb cycle - B D C A
+// in a different order than the first client. Requests from each client are
+// interleaved during execution
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient
+Server one: localhost/127.0.0.1, port 4545
+Enter your name: nathan
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+No secondary server being used.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB nathan: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD nathan: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+
+
+// JOKE SERVER
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer
+Server one: localhost, port 4545
+Mode toggled to PROVERB.
+Mode toggled to JOKE.
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+Mode toggled to JOKE.
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+
+// JOKECLIENTADMIN
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClientAdmin
+Server one: localhost/127.0.0.1, port 5050
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+
+
+*******MULTIPLE SERVERS
+// JOKE CLIENT CONNECTS TO TWO SERVERS AND COMPLETES RANDOMIZED JOKE AND PROVERB
+// CYCLES ON BOTH
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient localhost localhost
+Server one: localhost/127.0.0.1, port 4545
+Server two: localhost/127.0.0.1, port 4546
+Enter your name: nathan
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+// CHANGE OF SERVER RESULTS IN CONSOLE MESSAGE AND <S2> TO EVERY JOKE/PROVERB
+Now communicating with: localhost/127.0.0.1, port 4546
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JB nathan: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4545
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+// JOKE CYCLE COMPLETED ON FIRST SERVER - B D A C
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4546
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JA nathan: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JC nathan: What did the tie say to the hat? You go on ahead and I'll hang around!
+// JOKE CYCLE COMPLETED ON SECOND SERVER - D B A C
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4545
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB nathan: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4546
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PC nathan: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PB nathan: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JD nathan: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PD nathan: Fortune favors the brave.
+// PROVERB CYCLE COMPLETED ON FIRST SERVER - C B A D
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4545
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA nathan: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD nathan: Fortune favors the brave.
+// PROVERB CYCLE COMPLETED ON FIRST SERVER - B C A D
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
+// JOKESERVER
+// CONSOLE DISPLAYS MESSAGES OF COMPLETED CYCLES
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer
+Server one: localhost, port 4545
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+
+// JOKESERVER SECONDARY
+// CONSOLE DISPLAYS MESSAGES OF COMPLETED CYCLES
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer secondary
+Server two: localhost, port 4546
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+Mode toggled to JOKE.
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+
+
+// JOKECLIENTADMIN
+// CONSOLE DISPLAYS MESSAGES OF SWITCHING SERVERS
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClientAdmin localhost localhost
+Server one: localhost/127.0.0.1, port 5050
+Server two: localhost/127.0.0.1, port 5051
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: s 
+Now communicating with: localhost/127.0.0.1, port 5051
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 5050
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
+********MULTIPLE SERVERS MULTIPLE CLIENTS
+// JOKECLIENT ONE RECEIVES TWO JOKES AND TWO PROVERBS ON THE FIRST SERVER
+// THEN COMPLETES CYCLES ON THE SECOND SERVER
+// RETURNS TO FIRST SERVER TO COMPLETE PROVERB CYCLE
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient localhost localhost
+Server one: localhost/127.0.0.1, port 4545
+Server two: localhost/127.0.0.1, port 4546
+Enter your name: red
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JC red: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD red: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD red: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB red: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4546
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JD red: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JA red: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PC red: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PB red: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JC red: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JB red: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PA red: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PD red: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4545
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA red: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC red: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
+// JOKECLIENT TWO RECEIVES TWO JOKES AND TWO PROVERBS ON THE FIRST SERVER
+// THEN COMPLETES CYCLES ON THE SECOND SERVER
+// RETURNS TO FIRST SERVER TO COMPLETE PROVERB CYCLE
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClient localhost localhost
+Server one: localhost/127.0.0.1, port 4545
+Server two: localhost/127.0.0.1, port 4546
+Enter your name: blue  
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JB blue: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+JD blue: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PC blue: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PD blue: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4546
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JC blue: What did the tie say to the hat? You go on ahead and I'll hang around!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JB blue: Why did the picture go to jail? Because it was framed.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PA blue: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PC blue: Better to light a candle than to curse the darkness.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JD blue: Why do birds fly south for the winter? It's easier than walking!
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> JA blue: What happens to a frog's car when it breaks down? It gets toad away.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PD blue: Fortune favors the brave.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+<S2> PB blue: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 4545
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PB blue: The best way out is always through.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: 
+PA blue: Comparison is the thief of joy.
+Press enter to receive a joke or proverb, (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
+//JOKESERVER DISPLAYS COMPLETED CYCLES MESSAGES AND MODE CHANGES
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer
+Server one: localhost, port 4545
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+PROVERB CYCLE COMPLETED
+
+//JOKESERVER SECONDARY DISPLAYS COMPLETED CYCLES MESSAGES AND MODE CHANGES
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeServer secondary
+Server two: localhost, port 4546
+Mode toggled to PROVERB.
+Mode toggled to JOKE.
+JOKE CYCLE COMPLETED
+JOKE CYCLE COMPLETED
+Mode toggled to PROVERB.
+PROVERB CYCLE COMPLETED
+PROVERB CYCLE COMPLETED
+
+//JOKECLIENTADMIN DISPLAYS USER INPUT AND MESSAGES WHEN CHANGING SERVERS
+Nathans-MacBook-Pro:JokeServer nathanchmielewski$ java JokeClientAdmin localhost localhost
+Server one: localhost/127.0.0.1, port 5050
+Server two: localhost/127.0.0.1, port 5051
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 5051
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: 
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: s
+Now communicating with: localhost/127.0.0.1, port 5050
+Press enter to toggle mode, type (s) to switch servers, (quit) to end: quit
+Cancelled by user request.
+
